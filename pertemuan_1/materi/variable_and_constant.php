@@ -1,6 +1,5 @@
 <?php
 /*=============== VARIABLE  ===============*/
-
 // Mendeklarasikan variabel
 $nama = "John";
 $umur = 25;
