@@ -3,22 +3,33 @@
 $perbandingan = 10;
 
 if ($perbandingan == 3) {
-   echo "perbandingan";
+    echo "perbandingan";
 } elseif ($perbandingan == 10) {
+
     echo "testing";
 } else {
-    // kode jika semua kondisi salah
+    echo "<br>";
+    echo "tidak ada data yang digunakan";
 }
 
-switch ($perbandingan) {
-    case 1:
-        echo "data muncul";
+$pembayaran = 5000;
+
+switch ($pembayaran) {
+    case $pembayaran < 5000:
+        echo "<br>";
+        echo "data pembayaran kurang dari 5000";
         break;
-    case 2:
-        echo "data tidak muncul";
+    case $pembayaran == 5000:
+        echo "<br>";
+        echo "data pembayaran adalah 5000";
+        break;
+    case $pembayaran != 5000:
+        echo "<br>";
+        echo "data tidak sama dengan 5000";
         break;
     default:
-        // kode
+        echo "<br>";
+        echo "tidak ada data yang digunakan";
 }
 
 ?>
