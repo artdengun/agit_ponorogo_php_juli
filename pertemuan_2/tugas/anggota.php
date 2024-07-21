@@ -39,5 +39,8 @@ class anggota implements peminjaman_buku {
         }
         return false;
     }
+    public function __toString() {
+        return "Nama: $this->nama, Nomor Anggota: $this->nomorAnggota";
+    }
 }
 ?>

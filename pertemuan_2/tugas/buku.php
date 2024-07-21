@@ -29,5 +29,9 @@ class buku{
     {
         return $this->isbn;
     }
+
+    public function __toString() {
+        return "Judul: $this->judul, Penulis: $this->penulis, Nomor ISBN: $this->isbn";
+    }
 }
 

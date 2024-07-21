@@ -6,8 +6,8 @@ require_once 'buku_pelajaran.php';
 require_once 'anggota.php';
 
 class perpustakaan {
-    private $daftarBuku = array();
-    private $daftarAnggota = array();
+    private $daftarBuku = [];
+    private $daftarAnggota = [];
 
     public function tambahBuku(Buku $buku) {
         $this->daftarBuku[] = $buku;
@@ -54,6 +54,17 @@ class perpustakaan {
             }
         }
         return false;
+    }
+
+    public function __toString() {
+        $bukuListStr = implode(', ', array_map(function($buku) {
+            return $buku->getJudul();
+        }, $this->daftarBuku));
+        $anggotaListStr = implode(', ', array_map(function($anggota) {
+            return $anggota->getNama();
+        }, $this->daftarAnggota));
+
+        return "List Buku: $bukuListStr, \nList Anggota: $anggotaListStr\n";
     }
 
 }
