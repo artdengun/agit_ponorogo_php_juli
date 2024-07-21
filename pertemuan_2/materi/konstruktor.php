@@ -5,10 +5,10 @@ class Buku {
     public function __construct($judul, $penulis) {
         $this->judul = $judul;
         $this->penulis = $penulis;
-        echo "Buku '{$this->judul}' telah dibuat.\n";
+        echo "buku '{$this->judul}' telah dibuat.\n";
     }
     public function __destruct() {
-        echo "Buku '{$this->judul}' telah dihapus dari memori.\n";
+        echo "buku '{$this->judul}' telah dihapus dari memori.\n";
     }
 }
 $buku1 = new Buku("Harry Potter", "J.K. Rowling");

@@ -2,7 +2,7 @@
 
 namespace tugas;
 
-class BukuPelajaran extends Buku {
+class buku_pelajaran extends buku {
     private $mataPelajaran;
 
     public function __construct($judul, $penulis, $isbn, $mataPelajaran) {
