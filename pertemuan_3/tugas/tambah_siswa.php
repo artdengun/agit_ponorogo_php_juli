@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         $sql = "INSERT INTO siswa (nama, usia, kelas, mata_pelajaran_id) VALUES ('$nama', $usia, '$kelas', $mata_pelajaran_id)";
         if ($conn->query($sql) === TRUE) {
-            echo "Siswa baru berhasil ditambahkan";
+            echo "siswa baru berhasil ditambahkan";
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;
         }

@@ -1,24 +1,23 @@
 <?php
 
 // Definisi kelas
-class Mobil {
+class mobil {
     // Property
     public $warna;
     public $merk;
 
     // Method
     public function jalan() {
-        echo "Mobil sedang berjalan";
+        echo "mobil sedang berjalan";
     }
 }
 
-// Membuat objek dari kelas Mobil
-$mobilSaya = new Mobil();
+$mobilSaya = new mobil();
 // Menetapkan nilai untuk property
 $mobilSaya->warna = "Merah";
 $mobilSaya->merk = "Toyota";
 // Mengakses property
-echo "Warna Mobil: " . $mobilSaya->warna . "<br>";
-echo "Merk Mobil: " . $mobilSaya->merk . "<br>";
+echo "Warna mobil: " . $mobilSaya->warna . "\n";
+echo "Merk mobil: " . $mobilSaya->merk . "\n";
 // Memanggil method
-$mobilSaya->jalan(); // Output: Mobil sedang berjalan
+$mobilSaya->jalan(); // Output: mobil sedang berjalan
