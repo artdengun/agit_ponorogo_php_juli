@@ -1,13 +1,10 @@
 <?php
-
 namespace tugas;
-require_once "buku.php";
+
 require_once "perpustakaan.php";
-require_once "anggota.php";
-require_once "buku_pelajaran.php";
 
 // Membuat objek perpustakaan
-$perpustakaan = new Perpustakaan();
+$perpustakaan = new perpustakaan();
 
 // Menambah buku ke perpustakaan
 $buku1 = new buku("Buku A", "Penulis A", "123456");
@@ -16,10 +13,14 @@ $perpustakaan->tambahBuku($buku1);
 $perpustakaan->tambahBuku($buku2);
 
 // Mendaftarkan anggota baru
-$anggota1 = new anggota("anggota 1", "001");
-$perpustakaan->daftarkanAnggota($anggota1);
+$anggota1 = new Anggota("Anggota 1", "001");
+$perpustakaan->daftarAnggotaBaru($anggota1);
+
+// Meminjam buku
+$perpustakaan->pinjamBuku("001", "123456");
 
 // Mengembalikan buku
-$perpustakaan->kembalikanBuku("123456");
+$perpustakaan->kembalikanBuku("001", "123456");
+echo json_encode($buku2);
 
 ?>

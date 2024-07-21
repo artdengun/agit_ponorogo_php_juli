@@ -6,19 +6,38 @@ require_once "peminjaman_buku.php";
 
 class anggota implements peminjaman_buku {
     private $nama;
-    private $id;
+    private $nomorAnggota;
+    private $bukuDipinjam = array();
 
-    public function __construct($nama, $id) {
+    public function __construct($nama, $nomorAnggota) {
         $this->nama = $nama;
-        $this->id = $id;
+        $this->nomorAnggota = $nomorAnggota;
     }
 
-    public function pinjamBuku($anggotaId, $bukuId) {
-        // Implementation of borrowing a book
+    public function getNama() {
+        return $this->nama;
     }
 
-    public function kembalikanBuku($anggotaId, $bukuId) {
-        // Implementation of returning a book
+    public function getNomorAnggota() {
+        return $this->nomorAnggota;
+    }
+
+    public function getBukuDipinjam() {
+        return $this->bukuDipinjam;
+    }
+
+    public function pinjamBuku(Buku $buku) {
+        $this->bukuDipinjam[] = $buku;
+    }
+
+    public function kembalikanBuku(Buku $buku) {
+        foreach ($this->bukuDipinjam as $key => $b) {
+            if ($b->getIsbn() == $buku->getIsbn()) {
+                unset($this->bukuDipinjam[$key]);
+                return true;
+            }
+        }
+        return false;
     }
 }
 ?>

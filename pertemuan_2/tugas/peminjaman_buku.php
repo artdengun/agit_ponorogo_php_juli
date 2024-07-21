@@ -1,8 +1,9 @@
 <?php
 namespace tugas;
 
-interface peminjaman_buku {
-    public function pinjamBuku($anggotaId, $bukuId);
-    public function kembalikanBuku($anggotaId, $bukuId);
+interface peminjaman_buku{
+    public function pinjamBuku(Buku $buku);
+    public function kembalikanBuku(Buku $buku);
 }
+
 ?>
